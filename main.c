@@ -17,7 +17,6 @@ int main(void)
     {
         BeginDrawing();
         ClearBackground(BLACK);
-
         DrawText("TIC TAC TOE",300,80,20,WHITE);
         for (int i=1;i<grid_size;i++)
         {
@@ -44,18 +43,13 @@ int main(void)
 
                  makemove(board,row,col,player);
                  if(checkwin(board)==1)
-                    gameover=1;
-                    
+                    gameover=1; 
                  else if(checkwin(board)==2)
-                 
                     gameover=2;
                  else
                  player=(player==1)?2:1;
-                
                }
-               
-            }
-            
+            } 
         }
         for(int i=0;i<3;i++)
         {
@@ -77,3 +71,4 @@ int main(void)
     return 0;
 
 }
+
