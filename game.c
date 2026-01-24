@@ -18,6 +18,18 @@ void initBoard(int board[3][3])
     return 0;
 
  }
+int isboardfull(int board[3][3])
+ {
+    for (int i=0; i<3;i++)
+    {
+        for (int j=0;j<3;j++)
+        {
+            if (board[i][j]==0)
+            return 0;
+        }
+    }
+    return 1;
+ }
  void makemove(int board[3][3], int row, int col, int player)
  {
     board[row][col]=player;
@@ -38,4 +50,5 @@ void initBoard(int board[3][3])
     return board[0][2];
 
     return 0;
+
  }
