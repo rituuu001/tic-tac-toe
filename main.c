@@ -32,7 +32,7 @@ int main(void)
         if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             Vector2 mouse=GetMousePosition();
-            printf("Mouse: %f %f\n", mouse.x, mouse.y);
+           
             if (mouse.x>=boardx && mouse.x<boardx +cell_size*grid_size 
                 && mouse.y>=boardy && mouse.y<boardy+cell_size*grid_size)
             {
@@ -46,6 +46,8 @@ int main(void)
                     gameover=1; 
                  else if(checkwin(board)==2)
                     gameover=2;
+                 else if (isboardfull(board))
+                   gameover=3;
                  else
                  player=(player==1)?2:1;
                }
@@ -62,13 +64,16 @@ int main(void)
             }
         }
         if (gameover == 1)
-           DrawText("Player 1 won", 300, 600, 20, WHITE);
+           DrawText("Player 1 won 🎉", 300, 600, 20, WHITE);
         else if (gameover == 2)
-           DrawText("Player 2 won", 300, 600, 20, WHITE);
+           DrawText("Player 2 won 🎉", 300, 600, 20, WHITE);
+        else if (gameover==3)
+         DrawText("DRAW", 300, 600, 20, WHITE);
         EndDrawing();
     }
     CloseWindow();
     return 0;
 
 }
+
 
