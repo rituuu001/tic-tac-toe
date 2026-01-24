@@ -39,7 +39,7 @@ int main(void)
                int col=(mouse.x-boardx)/cell_size;
                int row=(mouse.y-boardy)/cell_size;
                if (!gameover && iscellempty(board,row,col))
-               {printf("row=%d col=%d\n", row, col);
+               {
 
                  makemove(board,row,col,player);
                  if(checkwin(board)==1)
@@ -75,5 +75,6 @@ int main(void)
     return 0;
 
 }
+
 
 
