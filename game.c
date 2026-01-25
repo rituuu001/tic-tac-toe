@@ -50,5 +50,12 @@ int isboardfull(int board[3][3])
     return board[0][2];
 
     return 0;
-
  }
+void resetgame(int board[3][3], int *player, int *gameover)
+ {
+   initBoard(board);
+   *player=1;
+   *gameover=0;
+     return ;
+ }
+
