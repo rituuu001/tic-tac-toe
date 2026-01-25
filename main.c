@@ -52,6 +52,10 @@ int main(void)
                  player=(player==1)?2:1;
                }
             } 
+             if (mouse.x>=390 && mouse.x<=500 && mouse.y>=700 && mouse.y<=725)
+        {
+           resetgame(board,&player,&gameover);
+        }
         }
         for(int i=0;i<3;i++)
         {
@@ -64,17 +68,20 @@ int main(void)
             }
         }
         if (gameover == 1)
-           DrawText("Player 1 won 🎉", 300, 600, 20, WHITE);
+           DrawText("Player 1 won", 300, 600, 20, WHITE);
         else if (gameover == 2)
-           DrawText("Player 2 won 🎉", 300, 600, 20, WHITE);
+           DrawText("Player 2 won", 300, 600, 20, WHITE);
         else if (gameover==3)
          DrawText("DRAW", 300, 600, 20, WHITE);
+        DrawRectangle(390,700,110,25,GREEN);
+        DrawText("RESTART", 400,700,20,WHITE);
         EndDrawing();
     }
     CloseWindow();
     return 0;
 
 }
+
 
 
 
